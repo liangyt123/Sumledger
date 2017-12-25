@@ -3,14 +3,7 @@
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 #ifndef  BASE58_H/*define*/
 #define  BASE58_H/*define*/
-
-#include<string.h>
-#include<openssl/sha.h> 
-#include<openssl/crypto.h> 
-#include<openssl/bn.h>
-#include<iostream>
-#include<exception>
-#include<math.h>
+#include "../header.h"
 static  std::string pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
 class CTOOL{

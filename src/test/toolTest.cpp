@@ -1,26 +1,22 @@
 
-// #include <gtest/gtest.h>
-// #include "../tool/base58.h"
+#include <gtest/gtest.h>
+#include "../tool/base58.h"
 
-// TEST(encodeBase58,suite)
-// {
-//    CTOOL::getInstance()->encodeBase58("");
-// }
+TEST(encodeBase58,suite)
+{
+   CTOOL::getInstance()->encodeBase58("");
+}
 
-// TEST(decodeBase58,suite)
-// {
-//     CTOOL::getInstance()->decodeBase58("");
-// }
-
-// TEST(hashString,suite)
-// {
-//     CTOOL::getInstance()->hashString("");
-// }
+TEST(decodeBase58,suite)
+{
+    CTOOL::getInstance()->decodeBase58("");
+}
 
 
-// bool run(int argc,char*argv[]){
 
-//   testing::GTEST_FLAG(output) = "xml:";
-//   testing::InitGoogleTest(&argc, argv);
-//   return RUN_ALL_TESTS();
-// }
+bool run(int argc,char*argv[]){
+
+  testing::GTEST_FLAG(output) = "xml:";
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

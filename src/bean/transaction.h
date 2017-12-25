@@ -1,24 +1,9 @@
-#include <vector>
+#ifndef _TRANSACTION_H
+#define _TRANSACTION_H
+/* code */
 
-
-//txIn输入
-class CTxIn{
-
-    public: 
-            int clear();
-};
-
-
-//txOut输出
-class CTxOut{
-
-    public:
-            int clear();
-
-};
-
-
-
+#include "../header.h"
+#include "txInOut.h"
 class CTransaction{
     
     public:
@@ -31,11 +16,18 @@ class CTransaction{
             
         }
 
+    public:
+        bool IsNull(){
+            return (vin.empty()&&vout.empty());
+        }
+
 
     public:
         int nVersion;//交易的版本控制
         std::vector<CTxIn> vin;
-        std::vector<CTxIn> vout;
+        std::vector<CTxOut> vout;
         int nlockTime;
 
 };
+#endif //_TRANSACTION_H
+
