@@ -5,6 +5,14 @@ class CBlockIndex{
         CBlockIndex* pprev;
         CBlockIndex* pnext;
         int height;
+
         
+
+};
+
+
+class CBlock{
+
+
 
 };

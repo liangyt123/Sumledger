@@ -6,6 +6,7 @@
 #include<openssl/sha.h> 
 #include<openssl/crypto.h> 
 #include<openssl/bn.h>
+#include<openssl/ec.h>
 #include<exception>
 #include<unistd.h>
 using namespace std;

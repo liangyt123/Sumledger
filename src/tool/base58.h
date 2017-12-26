@@ -43,15 +43,40 @@ class CTOOL{
                 inline std::string 
                 decodeBase58(const std::string &str)
                 {
-                     std::string tmp = std::string(str);
-                    // for(int i = 0;i<str.size();i++)
-                    // {
-                    //     for(int i = )
-                    //     if(tmp[i]==pszBase58[i])
-                    // }
-                    // int len = 
-                    // BIGNUM *bn;
-                    // BN_init(bn);
+                    std::string tmp = std::string(str);
+                    const char *psz = str.c_str();
+                    std::string result = std::string("");
+                    BIGNUM *rem = BN_new();
+                    BIGNUM *bn0 = BN_new();
+                    BIGNUM *mul = BN_new();
+                    BIGNUM *bn = BN_new();
+                    BIGNUM *bn58 = BN_new();
+                    BN_CTX *pctx = BN_CTX_new();
+                    BN_CTX_init(pctx);
+                    BN_init(bn);
+                    BN_init(rem);
+                    BN_init(bn0);
+                    BN_init(bn58);
+                    BN_dec2bn(&bn58,"58");
+                    BN_dec2bn(&bn0,"0");
+                    BN_hex2bn(&bn,str.c_str());
+                    int cmp = BN_cmp((const BIGNUM*)bn,(const BIGNUM*)bn0);
+                    for(const char* p = psz;*p;p++)
+                    {
+                        //找到当前的字符的
+                        const char *p1 = strchr(pszBase58.c_str(),*p);
+                        BN_set_word(mul,(p1-pszBase58.c_str()));
+                        BN_mul(bn,bn,bn58,pctx);
+                        BN_add(bn,bn,mul);
+
+                    }
+                    
+                    BN_free(bn);
+                    BN_free(mul);
+                    BN_free(bn0);
+                    BN_free(bn58);
+                
+                    OPENSSL_free(pctx);
                     
                     return tmp;
                 }  

@@ -23,8 +23,8 @@ appInt::init(int argc,char * argv[]){
     //对参数进行解析
      map<string,string> pmap = parseParameters(argc,argv);
     //有一个加节点的参数
-     getFromMap(pmap,"/add");
-     getFromMap(pmap,"/datadir");
+     addval = getFromMap(pmap,"/add");
+     datadir = getFromMap(pmap,"/datadir");
 
      //各种预备的处理
      //提供接口

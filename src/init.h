@@ -31,6 +31,8 @@ class appInt{
         string datadir;
         map<string,CTransaction> mapTransactions;
         map<string,CBlockIndex> mapBlockIndex;
+        map<string,bool>vWalletUpdated;
+        
 
 
 
