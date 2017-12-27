@@ -9,6 +9,7 @@
 #include<openssl/ec.h>
 #include<exception>
 #include<unistd.h>
+#include<openssl/obj_mac.h>
 using namespace std;
 //宏定义
 #define _CHECK_FAILED(rs) if(rs==-1) std::cout<<"the key:"<<#rs<<"is failed!";\
