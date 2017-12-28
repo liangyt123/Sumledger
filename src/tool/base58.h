@@ -6,10 +6,10 @@
 #include "../header.h"
 static  std::string pszBase58 = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 
-class CTOOL{
+class Cbase58{
         
         public:
-                static CTOOL *getInstance();
+                static Cbase58 *getInstance();
                 //这里涉及怎么把一个字符串转为数字，将数字编码再转为字符串//加密后的字符串长度是原来的4/3倍
                     
                 //将输入的Inhash一次后再进行返回一个解码

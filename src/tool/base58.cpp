@@ -1,11 +1,10 @@
 #include "base58.h"
 
-CTOOL* CTOOL::instance = new CTOOL();
+Cbase58* Cbase58::instance = new Cbase58();
 
-CTOOL*
-CTOOL::getInstance()
+Cbase58*
+Cbase58::getInstance()
 {
-
     return instance;/* code */;
 };
 
